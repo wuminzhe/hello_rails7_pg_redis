@@ -8,12 +8,14 @@ create a rails7 dev container
    bundle config unset frozen
    bundle install
    ```
-2. fix config/database.yml by adding a host to the develoment config.
+2. fix config/database.yml by adding `host`, `username` and `password` to the develoment section.
    ```yaml
    ...
    development:
      <<: *default
-     host: <%= ENV.fetch("DB_HOST") { "db" } %>
      database: try_rails7_development
+     host: <%= ENV.fetch("DB_HOST") { "db" } %>
+     username: <%= ENV.fetch("DB_USERNAME") { "postgres" } %>
+     password: <%= ENV.fetch("DB_PASSWORD") { "password" } %>
    ...
    ```
