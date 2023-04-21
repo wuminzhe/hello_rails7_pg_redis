@@ -8,3 +8,12 @@ create a rails7 dev container
    bundle config unset frozen
    bundle install
    ```
+2. fix config/database.yml by adding a host to the develoment config.
+   ```yaml
+   ...
+   development:
+     <<: *default
+     host: <%= ENV.fetch("DB_HOST") { "db" } %>
+     database: try_rails7_development
+   ...
+   ```
