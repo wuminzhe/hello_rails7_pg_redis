@@ -2,8 +2,6 @@ version: "3"
 services:
   db:
     image: postgres
-    volumes:
-      - ~/Documents/mypgdata:/var/lib/postgresql/data
     environment:
       POSTGRES_PASSWORD: password
   redis:
