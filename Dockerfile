@@ -1,7 +1,8 @@
 FROM ruby:3.1
 
 # Dependencies
-RUN apt-get update -qq && apt-get install -y cron nodejs postgresql-client && service start cron
+RUN apt-get update -qq && apt-get install -y cron nodejs npm yarn postgresql-client && service start cron
+
 # Rust
 RUN curl https://sh.rustup.rs -sSf | bash -s -- -y
 ENV PATH="/root/.cargo/bin:${PATH}"
