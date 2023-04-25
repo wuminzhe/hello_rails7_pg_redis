@@ -1,7 +1,8 @@
 # hello_rails7_pg_redis
-A github template to create a rails7 dev container.
 
-0. create a project from this template. for example: try_rails7
+A template to create a rails7 dev container.
+
+0. create a project from this template. for example `try_rails7`
 1. Generate your rails project in the dev container
    ```bash
    bundle exec rails new . --force -d=postgresql
@@ -9,7 +10,7 @@ A github template to create a rails7 dev container.
    bundle config unset frozen
    bundle install
    ```
-2. fix config/database.yml by adding `host`, `username` and `password` to the develoment section.
+2. fix config/database.yml by adding the `host`, `username` and `password` to the development section.
    ```yaml
    ...
    development:
