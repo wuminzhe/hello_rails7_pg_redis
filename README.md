@@ -11,6 +11,7 @@ A template to create a rails7 dev container.
       bundle exec rails new . --force -d=postgresql
       bundle config unset frozen
       bundle install
+      bundle exec rails importmap:install
       ```
    3. fix config/database.yml by adding the `host`, `username` and `password` to the development section.
       ```yaml
