@@ -13,8 +13,11 @@ A template to create a rails7 dev container.
       gem install rails
       rails new . --javascript esbuild --css tailwind -a propshaft -d=postgresql
       # or, one of the following
-      rails new . --force -d=postgresql
+      # importmaps + sprockets
+      rails new . -d=postgresql
+      # importmaps + propshaft
       rails new . -a propshaft -d=postgresql
+      # esbuild + propshaft
       rails new . --javascript esbuild --css bootstrap -a propshaft -d=postgresql
       ```
 
