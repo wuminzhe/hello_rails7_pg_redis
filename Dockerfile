@@ -6,6 +6,8 @@ RUN apt-get update -qq && apt-get install -y cron postgresql-client
 # Node
 RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - &&apt-get install -y nodejs
 
+RUN npm install -g yarn
+
 # Rust
 RUN curl https://sh.rustup.rs -sSf | bash -s -- -y
 ENV PATH="/root/.cargo/bin:${PATH}"
