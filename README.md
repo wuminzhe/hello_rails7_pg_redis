@@ -12,6 +12,7 @@ A template to create a rails7 dev container.
       ```bash
       gem install rails
       rails new . --javascript esbuild --css tailwind -a propshaft -d=postgresql
+
       # or, one of the following
       # importmaps + sprockets
       rails new . -d=postgresql
@@ -25,12 +26,11 @@ A template to create a rails7 dev container.
 
       ```yaml
       ...
-      development:
-        <<: *default
-        database: try_rails7_development
-        host: <%= ENV.fetch("DB_HOST") { "db" } %>
-        username: <%= ENV.fetch("DB_USERNAME") { "postgres" } %>
-        password: <%= ENV.fetch("DB_PASSWORD") { "password" } %>
+      default: &default
+         ...
+         host: <%= ENV.fetch("DB_HOST") { "db" } %>
+         username: <%= ENV.fetch("DB_USERNAME") { "postgres" } %>
+         password: <%= ENV.fetch("DB_PASSWORD") { "password" } %>
       ...
       ```
 
