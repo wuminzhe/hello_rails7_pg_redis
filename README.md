@@ -21,7 +21,7 @@ A template to create a rails7 dev container.
       # or, one of the following
       # importmaps + sprockets
       rails new . -d=postgresql
-      # importmaps + propshaft
+      # importmaps + propshaft (my prefer) 
       rails new . -a propshaft -d=postgresql
       # esbuild + propshaft
       rails new . --javascript esbuild --css bootstrap -a propshaft -d=postgresql
