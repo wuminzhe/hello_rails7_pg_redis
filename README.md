@@ -10,8 +10,9 @@ A template to create a rails7 dev container.
    
 4. In your dev container
 
-   1. (optional) `service start cron` if you need crontab to work.
-   2. Generate your rails project in the dev container.
+   1. `gem install rails`
+   2. (optional) `service start cron` if you need crontab to work.
+   3. Generate your rails project in the dev container.
       For example, the commands below will create a new Rails project using the Rails 7 default assets pipeline which is my favorite.
 
       ```bash
@@ -27,7 +28,7 @@ A template to create a rails7 dev container.
       rails new . --javascript esbuild --css bootstrap -a propshaft -d=postgresql
       ```
 
-   3. fix config/database.yml by adding the `host`, `username` and `password` to the development section.
+   4. fix config/database.yml by adding the `host`, `username` and `password` to the development section.
 
       ```yaml
       ...
@@ -40,7 +41,7 @@ A template to create a rails7 dev container.
       ```
 
       ```bash
-      bundle exec rails db:create
+      bundle exec rails db:prepare
       ```
 
    4. run your app in the container.
