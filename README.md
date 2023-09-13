@@ -2,8 +2,13 @@
 
 A template to create a rails7 dev container.
 
-0. create a project from this template. for example `try_rails7`
-1. In your dev container
+0. create a repo from this template.
+1. clone the repo to your local
+2. start a dev container for your local repo.
+
+   I tried 1. vscode, 2. neovim + [nvim-dev-container](https://github.com/esensar/nvim-dev-container). both are ok.
+   
+4. In your dev container
 
    1. (optional) `service start cron` if you need crontab to work.
    2. Generate your rails project in the dev container.
@@ -45,4 +50,4 @@ A template to create a rails7 dev container.
       ./bin/dev
       ```
 
-2. now, everything is ready.
+5. now, everything is ready.
