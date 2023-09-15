@@ -17,7 +17,6 @@ A template to create a rails 7 dev container.
    2. (optional) `service start cron` if you need crontab to work.
 
    3. Generate your rails project in the dev container.
-      For example, the commands below will create a new Rails project using the Rails 7 default assets pipeline which is my favorite.
 
       ```bash
       # importmaps + propshaft (my prefer) 
