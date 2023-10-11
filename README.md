@@ -10,9 +10,9 @@ A template to create a rails 7 dev container.
    
 4. In your dev container
 
-   1. `gem install rails -v 7.1.0.beta1`
+   1. `gem install rails -v 7.1.0`
     
-      https://rubyonrails.org/2023/9/13/Rails-7-1-0-beta-1-has-been-released
+      https://rubyonrails.org/2023/10/5/Rails-7-1-0-has-been-released
 
    2. (optional) `service start cron` if you need crontab to work.
 
@@ -23,19 +23,19 @@ A template to create a rails 7 dev container.
       rails new . -a propshaft -d=postgresql
 
       # or, one of the following
-      # * importmaps + sprockets
+      # importmaps + sprockets
       rails new . -d=postgresql
 
-      # * importmaps + sprockets + tailwind, https://techracho.bpsinc.jp/hachi8833/2022_02_17/115435
+      # importmaps + sprockets + tailwind, https://techracho.bpsinc.jp/hachi8833/2022_02_17/115435
       rails new . --css tailwind -d=postgresql
 
-      # * importmaps + propshaft + tailwind
+      # importmaps + propshaft + tailwind
       rails new . --css tailwind -a propshaft -d=postgresql
 
-      # * (nodejs) esbuild + sprockets + tailwind
+      # (nodejs) esbuild + sprockets + tailwind
       rails new . --javascript esbuild --css tailwind -d=postgresql
 
-      # * (nodejs) esbuild + propshaft + bootstrap
+      # (nodejs) esbuild + propshaft + bootstrap
       rails new . --javascript esbuild --css bootstrap -a propshaft -d=postgresql
       ```
 
