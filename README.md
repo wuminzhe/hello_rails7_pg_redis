@@ -10,11 +10,9 @@ A template to create a rails 7 dev container.
    
 4. In your dev container
 
-   1. `gem install rails -v 7.1.1`
-    
-   2. (optional) `service start cron` if you need crontab to work.
+   1. (optional) `service start cron` if you need crontab to work.
 
-   3. Generate your rails project in the dev container.
+   2. Generate your rails project in the dev container.
 
       ```bash
       # importmaps + propshaft (my prefer) 
@@ -37,7 +35,7 @@ A template to create a rails 7 dev container.
       rails new . --javascript esbuild --css bootstrap -a propshaft -d=postgresql
       ```
 
-   4. fix config/database.yml by adding the `host`, `username` and `password` to the development section.
+   3. fix config/database.yml by adding the `host`, `username` and `password` to the development section.
 
       ```yaml
       ...
