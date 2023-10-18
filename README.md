@@ -10,10 +10,8 @@ A template to create a rails 7 dev container.
    
 4. In your dev container
 
-   1. `gem install rails -v 7.1.0`
+   1. `gem install rails -v 7.1.1`
     
-      https://rubyonrails.org/2023/10/5/Rails-7-1-0-has-been-released
-
    2. (optional) `service start cron` if you need crontab to work.
 
    3. Generate your rails project in the dev container.
