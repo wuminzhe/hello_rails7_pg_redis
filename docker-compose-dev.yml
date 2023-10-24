@@ -1,11 +1,20 @@
 version: "3"
 services:
-  db:
-    image: postgres
+  pg:
+    image: postgres:14-alpine
     environment:
       POSTGRES_PASSWORD: password
+  pgadmin:
+    image: dpage/pgadmin4:7
+    ports:
+      - "5050:80"
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=wuminzhe@gmail.com
+      - PGADMIN_DEFAULT_PASSWORD=admin
+    depends_on:
+      - pg
   redis:
-    image: redis
+    image: redis:7-alpine
     command: redis-server
     volumes:
       - "redis:/data"
@@ -19,11 +28,11 @@ services:
     ports:
       - "3000:3000"
     depends_on:
-      - db
+      - pg
       - redis
     environment:
       - REDIS_URL=redis://redis:6379/0
-      - DB_HOST=db
+      - DB_HOST=pg
       - DB_USERNAME=postgres
       - DB_PASSWORD=password
 
