@@ -1,1 +1,1 @@
-pg:5432:postgres:postgres:password
+pg:5432:*:postgres:password
