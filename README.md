@@ -28,7 +28,7 @@ A template to create a rails 7 dev container.
       # importmaps + propshaft + tailwind
       rails new . --css tailwind -a propshaft -d=postgresql
 
-      # (nodejs) esbuild + sprockets + tailwind
+      # (nodejs) esbuild + sprockets + tailwind(my prefer)
       rails new . --javascript esbuild --css tailwind -d=postgresql
 
       # (nodejs) esbuild + propshaft + bootstrap
@@ -41,9 +41,9 @@ A template to create a rails 7 dev container.
       ...
       default: &default
          ...
-         host: <%= ENV.fetch("DB_HOST") { "db" } %>
-         username: <%= ENV.fetch("DB_USERNAME") { "postgres" } %>
-         password: <%= ENV.fetch("DB_PASSWORD") { "password" } %>
+         host: <%= ENV.fetch("POSTGRES_HOST") { "db" } %>
+         username: <%= ENV.fetch("POSTGRES_USERNAME") { "postgres" } %>
+         password: <%= ENV.fetch("POSTGRES_PASSWORD") { "password" } %>
       ...
       ```
 
@@ -55,7 +55,15 @@ A template to create a rails 7 dev container.
 
       ```bash
 
+      ./bin/rails s
+
+      # OR in nodejs build mode
       ./bin/dev
       ```
 
-5. now, everything is ready.
+5. http://127.0.0.1:3000
+
+6. database admin ui
+
+  - pgadmin4: http://127.0.0.1:5050  
+  - redisinsight: http://127.0.0.1:8001
