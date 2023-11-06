@@ -3,7 +3,7 @@ services:
   pg:
     image: postgres:14-alpine
     environment:
-      POSTGRES_PASSWORD: password
+      - POSTGRES_PASSWORD=password
   pgadmin:
     image: dpage/pgadmin4:7
     ports:
@@ -26,10 +26,12 @@ services:
       - ./servers.json:/pgadmin4/servers.json
       - ./pgpass:/pgadmin4/pgpass
   redis:
-    image: redis:7-alpine
-    command: redis-server
+    image: redis/redis-stack:latest
     volumes:
       - "redis:/data"
+    ports:
+      - "6379:6379"
+      - "8001:8001"
   web:
     build:
       context: .
@@ -44,9 +46,9 @@ services:
       - redis
     environment:
       - REDIS_URL=redis://redis:6379/0
-      - DB_HOST=pg
-      - DB_USERNAME=postgres
-      - DB_PASSWORD=password
+      - POSTGRES_HOST=pg
+      - POSTGRES_USERNAME=postgres
+      - POSTGRES_PASSWORD=password
 
 volumes:
   redis:
