@@ -72,5 +72,5 @@ A template to create a rails 7 dev container.
 
 6. database admin ui
 
-  - pgadmin4: http://127.0.0.1:5050  
-  - redisinsight: http://127.0.0.1:8001
+   - pgadmin4: http://127.0.0.1:5050  
+   - redisinsight: http://127.0.0.1:8001
