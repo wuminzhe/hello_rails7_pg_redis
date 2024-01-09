@@ -2,11 +2,18 @@
 
 A template to create a rails 7 dev container.
 
+* ruby 3.3
+* rails 7.1.2
+* postgres 14
+* redis latest
+
+## How to use
+
 0. create a repo from this template.
 1. clone the repo to your local
-2. start a dev container for your local repo.
+2. start a [dev container](https://code.visualstudio.com/docs/devcontainers/containers) for your local repo.
 
-   I tried 1. vscode, 2. neovim + [nvim-dev-container](https://github.com/esensar/nvim-dev-container). both are ok.
+   I'v tried 1. vscode, 2. neovim + [nvim-dev-container](https://github.com/esensar/nvim-dev-container). both are ok.
    
 4. In your dev container
 
@@ -54,9 +61,9 @@ A template to create a rails 7 dev container.
    4. run your app in the container.
 
       ```bash
-
+   
       ./bin/rails s
-
+   
       # OR in nodejs build mode
       ./bin/dev
       ```
