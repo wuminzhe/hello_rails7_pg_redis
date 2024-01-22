@@ -5,7 +5,7 @@ services:
     environment:
       - POSTGRES_PASSWORD=password
   pgadmin:
-    image: dpage/pgadmin4:7
+    image: dpage/pgadmin4:8
     ports:
       - "5050:80"
     entrypoint: >
