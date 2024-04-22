@@ -4,10 +4,10 @@ A template to create a rails 7 dev container.
 
 * ruby 3.3
 * rails 7.1.3
-* postgres 14 + pgadmin4-8
+* postgres 14 + pgadmin4-8.5
 * redis latest + redisinsight
 * nodejs 18
-* rust
+* (optional)rust
 
 ## How to use
 

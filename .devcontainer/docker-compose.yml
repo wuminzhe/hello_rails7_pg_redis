@@ -1,26 +1,48 @@
-version: '3'
+version: "3"
 services:
-  # Update this to the name of the service you want to work with in your docker-compose.yml file
-  web:
-    # Uncomment if you want to override the service's Dockerfile to one in the .devcontainer 
-    # folder. Note that the path of the Dockerfile and context is relative to the *primary* 
-    # docker-compose.yml file (the first in the devcontainer.json "dockerComposeFile"
-    # array). The sample below assumes your primary file is in the root of your project.
-    #
-    # build:
-    #   context: .
-    #   dockerfile: .devcontainer/Dockerfile
-
+  pg:
+    image: postgres:14-alpine
+    environment:
+      - POSTGRES_PASSWORD=password
+  pgadmin:
+    image: dpage/pgadmin4:8.5
+    ports:
+      - "5050:80"
+    entrypoint: >
+      /bin/sh -c "
+      cp -f /pgadmin4/pgpass /var/lib/pgadmin/;
+      chmod 600 /var/lib/pgadmin/pgpass;
+      chown pgadmin:pgadmin /var/lib/pgadmin/pgpass;
+      /entrypoint.sh
+      "
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@admin.com
+      - PGADMIN_DEFAULT_PASSWORD=admin
+      - PGADMIN_CONFIG_SERVER_MODE=False
+      - PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED=False
+    depends_on:
+      - pg
     volumes:
-      # Update this to wherever you want VS Code to mount the folder of your project
-      - ..:/workspaces:cached
+      - ./servers.json:/pgadmin4/servers.json
+      - ./pgpass:/pgadmin4/pgpass
+  redis:
+    image: redis/redis-stack:latest
+    volumes:
+      - "redis:/data"
+    ports:
+      - "6379:6379"
+      - "8001:8001"
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ../..:/workspaces:cached
+    command: sleep infinity
+    depends_on:
+      - pg
+      - redis
 
-    # Uncomment the next four lines if you will use a ptrace-based debugger like C++, Go, and Rust.
-    # cap_add:
-    #   - SYS_PTRACE
-    # security_opt:
-    #   - seccomp:unconfined
-
-    # Overrides default command so things don't shut down after the process ends.
-    command: /bin/sh -c "while sleep 1000; do :; done"
- 
+volumes:
+  redis:
+  postgres:

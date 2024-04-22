@@ -7,9 +7,9 @@ RUN apt-get update -qq && apt-get install -y cron postgresql-client zsh fzf
 RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - &&apt-get install -y nodejs
 RUN npm install --global yarn
 
-# Rust
-RUN curl https://sh.rustup.rs -sSf | bash -s -- -y
-ENV PATH="/root/.cargo/bin:${PATH}"
+# Uncomment if you need rust
+# RUN curl https://sh.rustup.rs -sSf | bash -s -- -y
+# ENV PATH="/root/.cargo/bin:${PATH}"
 
 # Zsh and Zim
 RUN chsh -s $(which zsh)
@@ -17,9 +17,3 @@ RUN curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zs
 
 # Rails
 RUN gem install rails -v 7.1.3.2
-
-WORKDIR /usr/src/app
-
-COPY . .
-
-EXPOSE 3000
