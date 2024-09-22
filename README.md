@@ -50,8 +50,8 @@ A template to create a rails 7 dev container.
       ...
       default: &default
          ...
-         host: <%= ENV.fetch("POSTGRES_HOST") { "db" } %>
-         username: <%= ENV.fetch("POSTGRES_USERNAME") { "postgres" } %>
+         host: <%= ENV.fetch("DB_HOST") { "postgres" } %>
+         username: <%= ENV.fetch("POSTGRES_USER") { "postgres" } %>
          password: <%= ENV.fetch("POSTGRES_PASSWORD") { "postgres" } %>
       ...
       ```
