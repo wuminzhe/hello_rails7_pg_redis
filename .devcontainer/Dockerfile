@@ -22,4 +22,4 @@ RUN curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zs
 RUN echo "PATH: $PATH"
 
 # Try to install Rails with full path
-RUN gem install rails -v 7.2.1 || echo "Failed to install Rails"
+RUN gem install rails -v 7.2.1
