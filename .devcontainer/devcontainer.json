@@ -4,7 +4,7 @@
   "name": "hello-rails7",
   "dockerComposeFile": "compose.yml",
   "service": "rails-app",
-  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}"
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
 
   "containerEnv": {
     "CAPYBARA_SERVER_PORT": "45678",
