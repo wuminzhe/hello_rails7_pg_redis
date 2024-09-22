@@ -2,11 +2,11 @@
 
 A template to create a rails 7 dev container.
 
-* ruby 3.3
-* rails 7.1.3
-* postgres 14 + pgadmin4-8.5
-* redis latest + redisinsight
-* nodejs 18
+* ruby 3.3.5
+* rails 7.2.1
+* postgres 16.1 + pgadmin4-8.11
+* redis 7.2
+* nodejs 20
 * (optional)rust
 
 ## How to use
@@ -52,7 +52,7 @@ A template to create a rails 7 dev container.
          ...
          host: <%= ENV.fetch("POSTGRES_HOST") { "db" } %>
          username: <%= ENV.fetch("POSTGRES_USERNAME") { "postgres" } %>
-         password: <%= ENV.fetch("POSTGRES_PASSWORD") { "password" } %>
+         password: <%= ENV.fetch("POSTGRES_PASSWORD") { "postgres" } %>
       ...
       ```
 
@@ -75,4 +75,3 @@ A template to create a rails 7 dev container.
 6. database admin ui
 
    - pgadmin4: http://127.0.0.1:5050  
-   - redisinsight: http://127.0.0.1:8001

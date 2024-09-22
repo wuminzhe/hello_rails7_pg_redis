@@ -5,7 +5,7 @@
       "Group": "Servers",
       "Port": 5432,
       "Username": "postgres",
-      "Host": "pg",
+      "Host": "postgres",
       "SSLMode": "prefer",
       "MaintenanceDB": "postgres",
       "PassFile": "/var/lib/pgadmin/pgpass"
